@@ -1,3 +1,7 @@
-module.exports = (req,res) => {
-res.status(200).send("Creando personajes")
+const Character = require("../data")
+const response = require("../utils/response")
+
+module.exports = async (req,res) => {
+const newCharacter = await Character.create()
+    response(res,201, newCharacter)
 }
