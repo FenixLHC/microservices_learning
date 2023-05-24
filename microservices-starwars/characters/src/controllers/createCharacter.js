@@ -1,7 +1,8 @@
-const Character = require("../data")
+const axios = require('axios')
 const response = require("../utils/response")
 
-module.exports = async (req,res) => {
-const newCharacter = await Character.create()
-    response(res,201, newCharacter)
+module.exports = async (req, res) => {
+    const {data} = await axios.post('http://database:3004/Character',req.body)
+  
+    response(res,200,data)
 }

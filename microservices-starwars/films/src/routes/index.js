@@ -4,6 +4,8 @@ const middleware = require("../middlewares")
 
 const router = Router()
 
+router.get('/:id', controllers.getFilmById)
+
 router.get("/", controllers.getFilms)
 
 router.post('/', middleware.filmValidation, controllers.createFilm)

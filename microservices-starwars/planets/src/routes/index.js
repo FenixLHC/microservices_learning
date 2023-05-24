@@ -4,6 +4,8 @@ const middleware = require("../middlewares")
 
 const router = Router()
 
+router.get('/:id', controllers.getPlanetById)
+
 router.get("/", controllers.getPlanets)
 
 router.post('/', middleware.planetValidation, controllers.createPlanet)
